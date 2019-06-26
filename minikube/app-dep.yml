@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: shlomis92/flask:latest
+        image: shlomis92/flask:v1.1
         ports:
         - containerPort: 4000
