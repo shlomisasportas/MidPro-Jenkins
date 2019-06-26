@@ -46,3 +46,4 @@ node() {
       enableConfigSubstitution: true
      )
 }
+}
