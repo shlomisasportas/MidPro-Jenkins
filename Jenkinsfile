@@ -4,6 +4,7 @@ node() {
   stage('Pre') { // Run pre-build steps
     cleanWs()
     sh "docker rm -f web || true"
+    sh "kubectl delete pods,svc,deployments --all"
   }
   
   stage('Git') { // Get code from GitLab repository
@@ -38,4 +39,10 @@ node() {
         sh "docker push shlomis92/${DockerImage}"
     }
  }
+    stage('Deploy @ Kubernetes') {
+   kubernetesDeploy(
+      kubeconfigId: 'kube',
+      configs: 'minikube/*',
+      enableConfigSubstitution: true
+     )
 }
