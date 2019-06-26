@@ -3,7 +3,7 @@ node() {
   
   stage('Pre') { // Run pre-build steps
     cleanWs()
-    sh "docker rm -f web || true"
+    sh "sudo docker rm -f web || true"
   }
   
   stage('Git') { // Get code from GitLab repository
