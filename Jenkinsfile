@@ -20,7 +20,7 @@ node() {
   
   stage('Test') { // Run tests on container
     def dockerOutput = sh (
-        script: 'curl http://10.0.1.145:5000/',
+        script: 'curl http://localhost:5000/',
         returnStdout: true
         ).trim()
 
