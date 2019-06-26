@@ -4,7 +4,6 @@ node() {
   stage('Pre') { // Run pre-build steps
     cleanWs()
     sh "docker rm -f web || true"
-    sh "kubectl delete pods,svc,deployments --all"
   }
   
   stage('Git') { // Get code from GitLab repository
