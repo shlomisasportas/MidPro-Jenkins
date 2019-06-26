@@ -24,7 +24,7 @@ node() {
         returnStdout: true
         ).trim()
 
-    if ( dockerOutput == 'Hello World!' ) {
+    if ( dockerOutput == '<h3>Hello World!</h3><b>Hostname:</b> 2b3c2db1bf1c<br/><b>Visits:</b> <i>cannot connect to Redis, counter disabled</i>' ) {
         currentBuild.result = 'SUCCESS'
     } else {
         currentBuild.result = 'FAILURE'
